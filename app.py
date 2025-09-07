@@ -53,7 +53,7 @@ GLOSSARIO = {
 # ----------------- Funções de negócio -----------------
 
 def buscar_noticias_crypto(moeda):
-    api_key = "335ac339603a1898b46c30f02064ca8ee45cda3820957c0c7e79f22f86eaa463"
+    api_key = "SUA_API_KEY_CRYPTOCOMPARE"
     url = f"https://min-api.cryptocompare.com/data/v2/news/?categories={moeda}&lang=EN"
     headers = {"authorization": f"Apikey {api_key}"}
     response = requests.get(url, headers=headers)
@@ -69,7 +69,7 @@ def buscar_noticias_crypto(moeda):
         return []
 
 def buscar_noticias_acao(ticker, empresa_nome):
-    api_key = "6448df59317341848edc932dd442d99b"
+    api_key = "SUA_API_KEY_NEWSAPI"
     busca = f'{ticker.replace(".SA","")} OR "{empresa_nome}"'
     url = (
         f'https://newsapi.org/v2/everything?q={busca}&language=pt&sortBy=publishedAt&pageSize=10&apiKey={api_key}'
@@ -339,4 +339,5 @@ st.caption(
     "Ferramenta experimental, sem fins de recomendação. "
     "Powered by CryptoCompare, NewsAPI, yfinance, Plotly & TextBlob | Feito por AlvaroTavares."
 )
+
 
